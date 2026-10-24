@@ -177,7 +177,7 @@ public final class SusWipePlugin extends JavaPlugin implements Listener, Command
     private void openConfirm(Player p, Pending action) {
         pending.put(p.getUniqueId(), action);
         Inventory inv = Bukkit.createInventory(p, 27, legacy.deserialize(color("§8§lCONFIRM WIPE")));
-        inv.setItem(11, head(action.target(), "§c§l" + action.name(), "§7Duration: §f" + action.days() + " day(s)", "§7Reason: §f" + action.reason(), "§7Expires: §f" + fmt(action.expires())));
+        inv.setItem(11, head(action.target(), "§c§l" + action.name(), "§7Duration: §f" + action.days() + " day(s)", "§7Reason: §f" + action.reason(), "§7Expires: §f" + fmt(expires(action))));
         inv.setItem(13, item(Material.LIME_CONCRETE, "§a§lCONFIRM WIPE", "§7Apply the timed ban."));
         inv.setItem(15, item(Material.RED_CONCRETE, "§c§lCANCEL", "§7Do not apply the wipe."));
         p.openInventory(inv);
