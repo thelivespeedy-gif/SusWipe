@@ -1,0 +1,14 @@
+gui:
+  title: "§6SusWipe §7Player Scanner"
+  refresh_button: "§aRefresh"
+  return_button: "§cReturn"
+  player_format: "§7{player} §8[{status}]"
+wipe:
+  default_days: 7
+  message: "§c{player} has been wiped for {days} days. Reason: {reason}"
+storage:
+  file: "plugins/SusWipe/data.yml"
+  auto_backup: true
+logging:
+  enabled: true
+  file: "plugins/SusWipe/logs.txt"
