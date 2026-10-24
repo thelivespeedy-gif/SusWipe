@@ -1,0 +1,29 @@
+name: Build SusWipe
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build with Maven
+        run: mvn -B package
+
+      - name: Upload plugin JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: SusWipe
+          path: target/suswipe-1.0.0.jar
